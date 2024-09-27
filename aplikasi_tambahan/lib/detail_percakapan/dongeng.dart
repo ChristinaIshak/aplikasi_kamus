@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -15,6 +17,10 @@ class _DongengState extends State<Dongeng> {
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
 
+  late StreamSubscription<PlayerState> _playerStateSubscription;
+  late StreamSubscription<Duration> _durationSubscription;
+  late StreamSubscription<Duration> _positionSubscription;
+
   String formatTime(int seconds) {
     return '${(Duration(seconds: seconds))}'.split('.')[0].padLeft(8, '0');
   }
@@ -22,23 +28,38 @@ class _DongengState extends State<Dongeng> {
   @override
   void initState() {
     super.initState();
-    player.onPlayerStateChanged.listen((state) {
+
+    _playerStateSubscription = player.onPlayerStateChanged.listen((state) {
       setState(() {
         isPlaying = state == PlayerState.playing;
       });
     });
 
-    player.onDurationChanged.listen((newDuration) {
+    _durationSubscription = player.onDurationChanged.listen((newDuration) {
       setState(() {
         duration = newDuration;
       });
     });
 
-    player.onPositionChanged.listen((newPosition) {
+    _positionSubscription = player.onPositionChanged.listen((newPosition) {
       setState(() {
         position = newPosition;
       });
     });
+  }
+
+  @override
+  void dispose() {
+    // Hentikan audio sebelum halaman dihancurkan
+    player.stop();
+    player.dispose();
+
+    // Batalkan semua listener untuk mencegah kebocoran memori
+    _playerStateSubscription.cancel();
+    _durationSubscription.cancel();
+    _positionSubscription.cancel();
+
+    super.dispose();
   }
 
   @override

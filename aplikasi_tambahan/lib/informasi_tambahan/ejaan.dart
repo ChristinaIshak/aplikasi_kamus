@@ -27,7 +27,7 @@ class _EjaanState extends State<Ejaan> {
                     Container(
                       margin:
                           const EdgeInsets.only(left: 24, right: 24, top: 42),
-                      width: 342,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 90,
                       decoration: const BoxDecoration(
                           color: Color.fromRGBO(153, 51, 65, 1),
@@ -115,7 +115,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 60,
                         padding: EdgeInsets.only(left: 20, top: 10),
                         decoration: BoxDecoration(
@@ -210,7 +210,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 80,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -326,7 +326,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 120,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -436,7 +436,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 80,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -549,7 +549,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 180,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -762,7 +762,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 100,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -988,7 +988,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 80,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -1151,7 +1151,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 80,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -1281,7 +1281,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 80,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -1384,7 +1384,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 120,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -1649,7 +1649,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 160,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -1798,7 +1798,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 100,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -1941,7 +1941,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 60,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -2068,7 +2068,7 @@ class _EjaanState extends State<Ejaan> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 110,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(

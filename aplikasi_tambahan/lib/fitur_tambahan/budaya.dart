@@ -66,7 +66,7 @@ class _BudayaState extends State<Budaya> {
                     Container(
                       margin:
                           const EdgeInsets.only(left: 24, right: 24, top: 42),
-                      width: 342,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 90,
                       decoration: const BoxDecoration(
                           color: Color.fromRGBO(153, 51, 65, 1),

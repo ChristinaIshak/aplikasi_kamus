@@ -27,7 +27,7 @@ class _KelasKataState extends State<KelasKata> {
                     Container(
                       margin:
                           const EdgeInsets.only(left: 24, right: 24, top: 42),
-                      width: 342,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 90,
                       decoration: const BoxDecoration(
                           color: Color.fromRGBO(153, 51, 65, 1),
@@ -104,7 +104,7 @@ class _KelasKataState extends State<KelasKata> {
                         height: 8,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 56,
                         padding: EdgeInsets.only(left: 20, top: 10),
                         decoration: BoxDecoration(
@@ -133,7 +133,7 @@ class _KelasKataState extends State<KelasKata> {
                         height: 10,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 56,
                         padding: EdgeInsets.only(left: 20, top: 10),
                         decoration: BoxDecoration(
@@ -162,7 +162,7 @@ class _KelasKataState extends State<KelasKata> {
                         height: 10,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 56,
                         padding: EdgeInsets.only(left: 20, top: 10),
                         decoration: BoxDecoration(
@@ -191,7 +191,7 @@ class _KelasKataState extends State<KelasKata> {
                         height: 10,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 56,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -220,7 +220,7 @@ class _KelasKataState extends State<KelasKata> {
                         height: 10,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 75,
                         padding: EdgeInsets.only(left: 20, top: 10, right: 20),
                         decoration: BoxDecoration(
@@ -250,7 +250,7 @@ class _KelasKataState extends State<KelasKata> {
                         height: 10,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 56,
                         padding: EdgeInsets.only(left: 20, top: 10),
                         decoration: BoxDecoration(
@@ -279,7 +279,7 @@ class _KelasKataState extends State<KelasKata> {
                         height: 10,
                       ),
                       Container(
-                        width: 360,
+                        width: MediaQuery.of(context).size.width - 48,
                         height: 56,
                         padding: EdgeInsets.only(left: 20, top: 10),
                         decoration: BoxDecoration(

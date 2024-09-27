@@ -78,7 +78,7 @@ class _AlfabetState extends State<Alfabet> {
                 children: [
                   Container(
                     margin: const EdgeInsets.only(left: 24, right: 24, top: 42),
-                    width: 342,
+                    width: MediaQuery.of(context).size.width - 48,
                     height: 90,
                     decoration: const BoxDecoration(
                       color: Color.fromRGBO(153, 51, 65, 1),
@@ -143,7 +143,7 @@ class _AlfabetState extends State<Alfabet> {
                       child: Column(
                         children: [
                           Container(
-                            width: 360,
+                            width: MediaQuery.of(context).size.width - 48,
                             height: 148,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
@@ -268,7 +268,7 @@ class _AlfabetState extends State<Alfabet> {
                             height: 10,
                           ),
                           Container(
-                            width: 360,
+                            width: MediaQuery.of(context).size.width - 48,
                             height: 148,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
@@ -393,7 +393,7 @@ class _AlfabetState extends State<Alfabet> {
                             height: 10,
                           ),
                           Container(
-                            width: 360,
+                            width: MediaQuery.of(context).size.width - 48,
                             height: 158,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
@@ -525,7 +525,7 @@ class _AlfabetState extends State<Alfabet> {
                             height: 10,
                           ),
                           Container(
-                            width: 360,
+                            width: MediaQuery.of(context).size.width - 48,
                             height: 158,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
@@ -657,7 +657,7 @@ class _AlfabetState extends State<Alfabet> {
                             height: 10,
                           ),
                           Container(
-                            width: 360,
+                            width: MediaQuery.of(context).size.width - 48,
                             height: 158,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
@@ -792,7 +792,7 @@ class _AlfabetState extends State<Alfabet> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 148,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),

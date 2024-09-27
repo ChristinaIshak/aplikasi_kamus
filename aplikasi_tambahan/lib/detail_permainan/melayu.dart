@@ -169,127 +169,131 @@ class _MelayuState extends State<Melayu> {
             final minutes = (_secondsPassed ~/ 60).toString().padLeft(2, '0');
             final seconds = (_secondsPassed % 60).toString().padLeft(2, '0');
 
-            return Padding(
-              padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  // Menambahkan indikator soal dan timer
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Soal ${_currentQuestionIndex + 1}/10',
-                        style: GoogleFonts.poppins(fontSize: 16),
-                      ),
-                      Text(
-                        '$minutes:$seconds',
-                        style: GoogleFonts.poppins(fontSize: 16),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 24),
-                  Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                          color: const Color.fromRGBO(153, 51, 65, 1),
-                        ),
-                        borderRadius: BorderRadius.circular(8)),
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
+            return SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 24, right: 24, top: 24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    // Menambahkan indikator soal dan timer
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Silakan klik jawaban yang benar dari tiga pilihan yang diberikan.",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.poppins(
-                            fontSize: 14,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 24,
+                          'Soal ${_currentQuestionIndex + 1}/10',
+                          style: GoogleFonts.poppins(fontSize: 16),
                         ),
                         Text(
-                          question.arti.isNotEmpty
-                              ? question.arti
-                              : question.arti_tm,
-                          style: GoogleFonts.poppins(
-                              fontSize: 20, fontWeight: FontWeight.w600),
-                          textAlign: TextAlign.center,
+                          '$minutes:$seconds',
+                          style: GoogleFonts.poppins(fontSize: 16),
                         ),
                       ],
                     ),
-                  ),
-                  const SizedBox(height: 40),
-                  for (var option in _currentOptions)
+                    const SizedBox(height: 24),
                     Container(
-                      margin: const EdgeInsets.only(
-                        bottom: 20,
-                      ),
-                      child: ElevatedButton(
-                        onPressed: _selectedAnswer == null
-                            ? () => _checkAnswer(option)
-                            : null,
-                        style: ButtonStyle(
-                          backgroundColor:
-                              WidgetStateProperty.resolveWith<Color>(
-                            (Set<WidgetState> states) {
-                              if (states.contains(WidgetState.disabled)) {
-                                if (option == _correctAnswer) {
-                                  return Colors.green; // Warna hijau jika benar
-                                } else if (option == _selectedAnswer) {
-                                  return const Color.fromRGBO(
-                                      153, 51, 65, 1); // Warna merah jika salah
-                                } else {
-                                  return const Color.fromRGBO(153, 51, 65,
-                                      1); // Warna default untuk tombol disable
-                                }
-                              }
-                              return Colors
-                                  .white; // Warna default sebelum disable
-                            },
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: const Color.fromRGBO(153, 51, 65, 1),
                           ),
-                          padding: WidgetStateProperty.all(
-                            const EdgeInsets.only(
-                                top: 24, bottom: 24, left: 20, right: 20),
-                          ),
-                          shape: WidgetStateProperty.all(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
-                          side: WidgetStateProperty.all(
-                            BorderSide(
-                              color: _selectedAnswer == null
-                                  ? const Color.fromRGBO(153, 51, 65, 1)
-                                  : option == _correctAnswer
-                                      ? Colors.green
-                                      : option == _selectedAnswer
-                                          ? const Color.fromRGBO(153, 51, 65, 1)
-                                          : const Color.fromRGBO(
-                                              153, 51, 65, 1),
-                              width: 1,
-                            ),
-                          ),
-                        ),
-                        child: Text(
-                          option,
-                          style: GoogleFonts.poppins(
+                          borderRadius: BorderRadius.circular(8)),
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Silakan klik jawaban yang benar dari tiga pilihan yang diberikan.",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.poppins(
                               fontSize: 14,
-                              color: _selectedAnswer == null
-                                  ? Colors.black
-                                  : _selectedAnswer != null
-                                      ? Colors.white
-                                      : Colors.white),
-                          textAlign: TextAlign.center,
-                        ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 24,
+                          ),
+                          Text(
+                            question.arti.isNotEmpty
+                                ? question.arti
+                                : question.arti_tm,
+                            style: GoogleFonts.poppins(
+                                fontSize: 20, fontWeight: FontWeight.w600),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
                     ),
-                  if (_selectedAnswer != null)
-                    ElevatedButton(
-                      onPressed: _nextQuestion,
-                      child: const Text('Selanjutnya'),
-                    ),
-                ],
+                    const SizedBox(height: 40),
+                    for (var option in _currentOptions)
+                      Container(
+                        margin: const EdgeInsets.only(
+                          bottom: 20,
+                        ),
+                        child: ElevatedButton(
+                          onPressed: _selectedAnswer == null
+                              ? () => _checkAnswer(option)
+                              : null,
+                          style: ButtonStyle(
+                            backgroundColor:
+                                WidgetStateProperty.resolveWith<Color>(
+                              (Set<WidgetState> states) {
+                                if (states.contains(WidgetState.disabled)) {
+                                  if (option == _correctAnswer) {
+                                    return Colors
+                                        .green; // Warna hijau jika benar
+                                  } else if (option == _selectedAnswer) {
+                                    return const Color.fromRGBO(153, 51, 65,
+                                        1); // Warna merah jika salah
+                                  } else {
+                                    return const Color.fromRGBO(153, 51, 65,
+                                        1); // Warna default untuk tombol disable
+                                  }
+                                }
+                                return Colors
+                                    .white; // Warna default sebelum disable
+                              },
+                            ),
+                            padding: WidgetStateProperty.all(
+                              const EdgeInsets.only(
+                                  top: 24, bottom: 24, left: 20, right: 20),
+                            ),
+                            shape: WidgetStateProperty.all(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                            side: WidgetStateProperty.all(
+                              BorderSide(
+                                color: _selectedAnswer == null
+                                    ? const Color.fromRGBO(153, 51, 65, 1)
+                                    : option == _correctAnswer
+                                        ? Colors.green
+                                        : option == _selectedAnswer
+                                            ? const Color.fromRGBO(
+                                                153, 51, 65, 1)
+                                            : const Color.fromRGBO(
+                                                153, 51, 65, 1),
+                                width: 1,
+                              ),
+                            ),
+                          ),
+                          child: Text(
+                            option,
+                            style: GoogleFonts.poppins(
+                                fontSize: 14,
+                                color: _selectedAnswer == null
+                                    ? Colors.black
+                                    : _selectedAnswer != null
+                                        ? Colors.white
+                                        : Colors.white),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    if (_selectedAnswer != null)
+                      ElevatedButton(
+                        onPressed: _nextQuestion,
+                        child: const Text('Selanjutnya'),
+                      ),
+                  ],
+                ),
               ),
             );
           }

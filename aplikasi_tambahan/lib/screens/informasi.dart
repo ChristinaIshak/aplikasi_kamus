@@ -34,8 +34,10 @@ class _InformasiState extends State<Informasi> {
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only(left: 85),
+                //margin: EdgeInsets.only(left: 85),
+                alignment: Alignment.center,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
                       'assets/img/logi-kbpj.png',
@@ -76,7 +78,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -113,7 +115,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -142,7 +144,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -171,7 +173,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -208,7 +210,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -237,7 +239,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -266,7 +268,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -303,7 +305,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -362,7 +364,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -391,7 +393,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -420,7 +422,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -449,7 +451,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -478,7 +480,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -507,7 +509,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -566,7 +568,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -595,7 +597,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -624,7 +626,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -653,7 +655,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -713,7 +715,7 @@ class _InformasiState extends State<Informasi> {
                       height: 8,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -742,7 +744,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -802,7 +804,7 @@ class _InformasiState extends State<Informasi> {
                       height: 8,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -831,7 +833,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -893,7 +895,7 @@ class _InformasiState extends State<Informasi> {
                       height: 8,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -922,7 +924,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -951,7 +953,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -980,7 +982,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(
@@ -1009,7 +1011,7 @@ class _InformasiState extends State<Informasi> {
                       height: 10,
                     ),
                     Container(
-                      width: 360,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 56,
                       padding: EdgeInsets.only(left: 20, top: 10),
                       decoration: BoxDecoration(

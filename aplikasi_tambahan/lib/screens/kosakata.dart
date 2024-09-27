@@ -89,7 +89,7 @@ class _PencarianPageState extends State<PencarianPage> {
             Center(
               child: Container(
                 margin: EdgeInsets.only(top: 18),
-                width: 355,
+                width: MediaQuery.of(context).size.width - 48,
                 height: 35,
                 decoration: BoxDecoration(
                   color: Color.fromRGBO(153, 51, 65, 1),
@@ -146,7 +146,7 @@ class _PencarianPageState extends State<PencarianPage> {
             ),
             const SizedBox(height: 15),
             Container(
-              width: 355,
+              width: MediaQuery.of(context).size.width - 48,
               height: 45,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -188,8 +188,11 @@ class _PencarianPageState extends State<PencarianPage> {
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(right: 170, top: 15),
+            Container(
+              width: MediaQuery.of(context).size.width - 48,
+              height: 20,
+              margin: EdgeInsets.only(top: 10, left: 24),
+              //padding: EdgeInsets.only(right: 170, top: 15),
               child: Text(
                 'Hasil pencarian : 7400 kata',
                 style: GoogleFonts.notoSans(fontSize: 14.0),

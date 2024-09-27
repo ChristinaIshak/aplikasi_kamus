@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -15,6 +17,10 @@ class _DialogPageState extends State<DialogPage> {
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
 
+  late StreamSubscription<PlayerState> _playerStateSubscription;
+  late StreamSubscription<Duration> _durationSubscription;
+  late StreamSubscription<Duration> _positionSubscription;
+
   String formatTime(int seconds) {
     return '${(Duration(seconds: seconds))}'.split('.')[0].padLeft(8, '0');
   }
@@ -22,23 +28,38 @@ class _DialogPageState extends State<DialogPage> {
   @override
   void initState() {
     super.initState();
-    player.onPlayerStateChanged.listen((state) {
+
+    _playerStateSubscription = player.onPlayerStateChanged.listen((state) {
       setState(() {
         isPlaying = state == PlayerState.playing;
       });
     });
 
-    player.onDurationChanged.listen((newDuration) {
+    _durationSubscription = player.onDurationChanged.listen((newDuration) {
       setState(() {
         duration = newDuration;
       });
     });
 
-    player.onPositionChanged.listen((newPosition) {
+    _positionSubscription = player.onPositionChanged.listen((newPosition) {
       setState(() {
         position = newPosition;
       });
     });
+  }
+
+  @override
+  void dispose() {
+    // Hentikan audio sebelum halaman dihancurkan
+    player.stop();
+    player.dispose();
+
+    // Batalkan semua listener untuk mencegah kebocoran memori
+    _playerStateSubscription.cancel();
+    _durationSubscription.cancel();
+    _positionSubscription.cancel();
+
+    super.dispose();
   }
 
   @override
@@ -51,9 +72,8 @@ class _DialogPageState extends State<DialogPage> {
         )),
         body: SingleChildScrollView(
           child: Container(
-              height: 1130,
               margin: EdgeInsets.only(top: 24, left: 24, right: 24, bottom: 40),
-              padding: EdgeInsets.only(left: 10, top: 10),
+              padding: EdgeInsets.only(left: 10, top: 10, bottom: 20),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromRGBO(251, 182, 175, 1))),

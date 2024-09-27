@@ -34,7 +34,7 @@ class _PermainanState extends State<Permainan> {
         ),
         body: SingleChildScrollView(
           child: Container(
-            margin: const EdgeInsets.only(top: 5),
+            margin: const EdgeInsets.only(top: 5, bottom: 40),
             child: Column(
               children: [
                 Row(
@@ -42,7 +42,7 @@ class _PermainanState extends State<Permainan> {
                     Container(
                       margin:
                           const EdgeInsets.only(left: 24, right: 24, top: 42),
-                      width: 342,
+                      width: MediaQuery.of(context).size.width - 48,
                       height: 90,
                       decoration: const BoxDecoration(
                           color: Color.fromRGBO(153, 51, 65, 1),
@@ -116,7 +116,7 @@ class _PermainanState extends State<Permainan> {
                     child: Column(
                       children: [
                         Container(
-                          width: 360,
+                          width: MediaQuery.of(context).size.width - 48,
                           height: 114,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
@@ -139,62 +139,66 @@ class _PermainanState extends State<Permainan> {
                                 ),
                               ),
                               SizedBox(width: 15),
-                              Container(
-                                margin: EdgeInsets.only(top: 13),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Text(
-                                      'Tebak Kata Bahasa Melayu',
-                                      style: GoogleFonts.poppins(
-                                          color: Colors.black,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(height: 1),
-                                    Row(
-                                      children: [
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'Pertanyaan akan diberikan dalam bahasa',
-                                              style: GoogleFonts.poppins(
-                                                color: Colors.black,
-                                                fontSize: 10,
-                                              ),
-                                            ),
-                                            Text(
-                                              'Melayu Jambi dialek Seberang dan',
-                                              style: GoogleFonts.poppins(
-                                                color: Colors.black,
-                                                fontSize: 10,
-                                              ),
-                                            ),
-                                            Text(
-                                              'Anda akan diberikan tiga pilihan.',
-                                              style: GoogleFonts.poppins(
-                                                color: Colors.black,
-                                                fontSize: 10,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 9,
-                                            ),
-                                            Text(
-                                              '10 Pertanyaan',
-                                              style: GoogleFonts.poppins(
-                                                  color: Color.fromRGBO(
-                                                      153, 51, 65, 1),
+                              Expanded(
+                                child: Container(
+                                  margin: EdgeInsets.only(top: 13),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        'Tebak Kata Bahasa Melayu',
+                                        style: GoogleFonts.poppins(
+                                            color: Colors.black,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      SizedBox(height: 1),
+                                      Row(
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Pertanyaan akan diberikan dalam bahasa',
+                                                style: GoogleFonts.poppins(
+                                                  color: Colors.black,
                                                   fontSize: 10,
-                                                  fontWeight: FontWeight.w600),
-                                            ),
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                  ],
+                                                ),
+                                              ),
+                                              Text(
+                                                'Melayu Jambi dialek Seberang dan',
+                                                style: GoogleFonts.poppins(
+                                                  color: Colors.black,
+                                                  fontSize: 10,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Anda akan diberikan tiga pilihan.',
+                                                style: GoogleFonts.poppins(
+                                                  color: Colors.black,
+                                                  fontSize: 10,
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: 9,
+                                              ),
+                                              Text(
+                                                '10 Pertanyaan',
+                                                style: GoogleFonts.poppins(
+                                                    color: Color.fromRGBO(
+                                                        153, 51, 65, 1),
+                                                    fontSize: 10,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               )
                             ],
@@ -220,7 +224,7 @@ class _PermainanState extends State<Permainan> {
                     child: Column(
                       children: [
                         Container(
-                          width: 360,
+                          width: MediaQuery.of(context).size.width - 48,
                           height: 114,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
@@ -324,7 +328,7 @@ class _PermainanState extends State<Permainan> {
                     child: Column(
                       children: [
                         Container(
-                          width: 360,
+                          width: MediaQuery.of(context).size.width - 48,
                           height: 128,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),

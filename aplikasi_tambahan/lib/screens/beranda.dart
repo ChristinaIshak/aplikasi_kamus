@@ -38,7 +38,7 @@ class _BerandaState extends State<Beranda> {
       ),
       body: SingleChildScrollView(
         child: Container(
-            margin: const EdgeInsets.only(top: 5),
+            margin: const EdgeInsets.only(top: 5, bottom: 40),
             child: Column(
               children: [
                 Row(
@@ -46,36 +46,33 @@ class _BerandaState extends State<Beranda> {
                     Container(
                       margin:
                           const EdgeInsets.only(left: 24, right: 24, top: 42),
-                      //width: 342,
+                      width: MediaQuery.of(context).size.width -
+                          48, // Lebar layar dikurangi margin kiri dan kanan (24 + 24)
                       height: 90,
                       decoration: const BoxDecoration(
-                          color: Color.fromRGBO(153, 51, 65, 1),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(15),
-                          )),
-
+                        color: Color.fromRGBO(153, 51, 65, 1),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                      ),
                       child: Stack(
                         clipBehavior: Clip.none,
                         children: <Widget>[
                           Positioned(
-                              bottom:
-                                  0, // Posisi gambar sejajar dengan garis bawah container
-                              left: 0,
-                              right: 14,
-                              child: Align(
-                                alignment: Alignment.topRight,
-                                child: Image.asset(
-                                  'assets/img/Up-Icon.png',
-                                  width: 127,
-                                  height:
-                                      127, // Ukuran gambar yang lebih besar dari container
-                                ),
-                              )),
+                            bottom: 0,
+                            right:
+                                14, // Menempatkan gambar di ujung kanan container
+                            child: Image.asset(
+                              'assets/img/Up-Icon.png',
+                              width: 127,
+                              height:
+                                  127, // Ukuran gambar tetap lebih besar dari container
+                            ),
+                          ),
                           Align(
                             alignment: Alignment.centerLeft,
                             child: Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 23), // Jarak teks dari tepi container
+                              padding: const EdgeInsets.only(left: 23),
                               child: Text(
                                 'Temukan kata\nyang kamu inginkan',
                                 style: GoogleFonts.poppins(
@@ -84,16 +81,17 @@ class _BerandaState extends State<Beranda> {
                                 ),
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+
+                const SizedBox(height: 20),
                 Container(
                   alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.only(left: 24, right: 24),
+                  margin: const EdgeInsets.only(left: 24, right: 24),
                   child: Text(
                     'Informasi Tambahan',
                     style: GoogleFonts.poppins(
@@ -105,9 +103,11 @@ class _BerandaState extends State<Beranda> {
                 ),
 
                 Row(
+                  mainAxisAlignment: MainAxisAlignment
+                      .spaceEvenly, // Menjaga jarak rata antara semua item
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 33, top: 15),
+                      margin: const EdgeInsets.only(top: 15),
                       child: Column(
                         children: [
                           GestureDetector(
@@ -115,12 +115,12 @@ class _BerandaState extends State<Beranda> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => KelasKata()),
+                                    builder: (context) => const KelasKata()),
                               );
                             },
                             child: Image.asset('assets/img/kelas_kata.png'),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 9,
                           ),
                           Text(
@@ -129,12 +129,12 @@ class _BerandaState extends State<Beranda> {
                                 color: Colors.black,
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500),
-                          )
+                          ),
                         ],
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 30, top: 15),
+                      margin: const EdgeInsets.only(top: 15),
                       child: Column(
                         children: [
                           GestureDetector(
@@ -142,7 +142,7 @@ class _BerandaState extends State<Beranda> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Ragam()),
+                                    builder: (context) => const Ragam()),
                               );
                             },
                             child: Image.asset(
@@ -151,7 +151,7 @@ class _BerandaState extends State<Beranda> {
                               width: 30,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 9,
                           ),
                           Text(
@@ -160,12 +160,12 @@ class _BerandaState extends State<Beranda> {
                                 color: Colors.black,
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500),
-                          )
+                          ),
                         ],
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 30, top: 15),
+                      margin: const EdgeInsets.only(top: 15),
                       child: Column(
                         children: [
                           GestureDetector(
@@ -173,7 +173,7 @@ class _BerandaState extends State<Beranda> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Alfabet()),
+                                    builder: (context) => const Alfabet()),
                               );
                             },
                             child: Image.asset(
@@ -182,7 +182,7 @@ class _BerandaState extends State<Beranda> {
                               width: 30,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 9,
                           ),
                           Text(
@@ -191,12 +191,12 @@ class _BerandaState extends State<Beranda> {
                                 color: Colors.black,
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500),
-                          )
+                          ),
                         ],
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 30, top: 15, right: 24),
+                      margin: const EdgeInsets.only(top: 15),
                       child: Column(
                         children: [
                           GestureDetector(
@@ -204,7 +204,7 @@ class _BerandaState extends State<Beranda> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Ejaan()),
+                                    builder: (context) => const Ejaan()),
                               );
                             },
                             child: Image.asset(
@@ -213,7 +213,7 @@ class _BerandaState extends State<Beranda> {
                               width: 30,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 9,
                           ),
                           Text(
@@ -222,16 +222,17 @@ class _BerandaState extends State<Beranda> {
                                 color: Colors.black,
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500),
-                          )
+                          ),
                         ],
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+
+                const SizedBox(height: 20),
                 Container(
                   alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.only(left: 24, right: 24),
+                  margin: const EdgeInsets.only(left: 24, right: 24),
                   child: Text(
                     'Fitur Tambahan',
                     style: GoogleFonts.poppins(
@@ -241,7 +242,7 @@ class _BerandaState extends State<Beranda> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 7,
                 ),
                 // Fitur Tambahan untuk percakapan
@@ -249,87 +250,88 @@ class _BerandaState extends State<Beranda> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Percakapan()),
+                      MaterialPageRoute(
+                          builder: (context) => const Percakapan()),
                     );
                   },
                   child: Container(
-                    margin: EdgeInsets.only(left: 24, right: 24),
-                    padding: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(left: 24, right: 24),
+                    padding: const EdgeInsets.only(top: 10),
                     child: Column(
                       children: [
                         Container(
-                          width: 360,
+                          width: MediaQuery.of(context).size.width -
+                              48, // Lebar responsif dikurangi margin 24px di setiap sisi
                           height: 102,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               border: Border.all(
-                                  color: Color.fromRGBO(251, 182, 175, 1))),
+                                  color:
+                                      const Color.fromRGBO(251, 182, 175, 1))),
                           child: Row(
                             children: [
                               Container(
                                 width: 71,
                                 height: 84,
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     top: 19.5,
                                     bottom: 19.5,
                                     right: 15,
                                     left: 15),
-                                margin:
-                                    EdgeInsets.only(left: 8, top: 9, bottom: 9),
+                                margin: const EdgeInsets.only(
+                                    left: 8, top: 9, bottom: 9),
                                 decoration: BoxDecoration(
-                                    color: Color.fromRGBO(251, 182, 175, 1),
+                                    color:
+                                        const Color.fromRGBO(251, 182, 175, 1),
                                     borderRadius: BorderRadius.circular(10)),
                                 child: Image.asset(
                                   'assets/img/counseling.png',
                                   fit: BoxFit.contain,
                                 ),
                               ),
-                              SizedBox(width: 16),
-                              Container(
-                                margin: EdgeInsets.only(top: 11),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Text(
-                                      'Percakapan',
-                                      style: GoogleFonts.poppins(
-                                          color: Colors.black,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(top: 5),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Tersedia rekaman suara dari penutur',
-                                            style: GoogleFonts.poppins(
-                                              color: Colors.black,
-                                              fontSize: 12,
-                                            ),
-                                          ),
-                                          Text(
-                                            'asli bahasa Melayu dialek Jambi ',
-                                            style: GoogleFonts.poppins(
-                                              color: Colors.black,
-                                              fontSize: 12,
-                                            ),
-                                          ),
-                                          Text(
-                                            'Seberang.',
-                                            style: GoogleFonts.poppins(
-                                              color: Colors.black,
-                                              fontSize: 12,
-                                            ),
-                                          ),
-                                        ],
+                              const SizedBox(width: 16),
+                              Expanded(
+                                child: Container(
+                                  margin: const EdgeInsets.only(top: 11),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        'Percakapan',
+                                        style: GoogleFonts.poppins(
+                                            color: Colors.black,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600),
                                       ),
-                                    )
-                                  ],
+                                      Container(
+                                        margin: const EdgeInsets.only(
+                                            top: 5, right: 15),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            RichText(
+                                              text: TextSpan(
+                                                style: const TextStyle(
+                                                    color: Colors.black),
+                                                children: [
+                                                  TextSpan(
+                                                      text:
+                                                          'Tersedia rekaman suara dari penutur asli bahasa Melayu dialek Jambi Seberang',
+                                                      style:
+                                                          GoogleFonts.poppins(
+                                                        fontSize: 12,
+                                                      )),
+                                                ],
+                                              ),
+                                              textAlign: TextAlign.justify,
+                                            ),
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               )
                             ],
@@ -339,7 +341,8 @@ class _BerandaState extends State<Beranda> {
                     ),
                   ),
                 ),
-                SizedBox(
+
+                const SizedBox(
                   height: 5,
                 ),
                 // Fitur Tambahan untuk Seloko
@@ -347,100 +350,102 @@ class _BerandaState extends State<Beranda> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Seloko()),
+                      MaterialPageRoute(builder: (context) => const Seloko()),
                     );
                   },
                   child: Container(
-                    margin: EdgeInsets.only(left: 24, right: 24),
-                    padding: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(left: 24, right: 24),
+                    padding: const EdgeInsets.only(top: 10),
                     child: Column(
                       children: [
                         Container(
-                          width: 360,
+                          width: MediaQuery.of(context).size.width -
+                              48, // Lebar responsif dikurangi margin 24px di setiap sisi
                           height: 102,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               border: Border.all(
-                                  color: Color.fromRGBO(251, 182, 175, 1))),
+                                  color:
+                                      const Color.fromRGBO(251, 182, 175, 1))),
                           child: Row(
                             children: [
                               Container(
                                 width: 71,
                                 height: 84,
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     top: 19.5,
                                     bottom: 19.5,
                                     right: 15,
                                     left: 15),
-                                margin:
-                                    EdgeInsets.only(left: 8, top: 9, bottom: 9),
+                                margin: const EdgeInsets.only(
+                                    left: 8, top: 9, bottom: 9),
                                 decoration: BoxDecoration(
-                                    color: Color.fromRGBO(251, 182, 175, 1),
+                                    color:
+                                        const Color.fromRGBO(251, 182, 175, 1),
                                     borderRadius: BorderRadius.circular(10)),
                                 child: Image.asset(
                                   'assets/img/poem.png',
                                   fit: BoxFit.contain,
                                 ),
                               ),
-                              SizedBox(width: 16),
-                              Container(
-                                margin: EdgeInsets.only(top: 11),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Text(
-                                      'Seloko',
-                                      style: GoogleFonts.poppins(
-                                          color: Colors.black,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(top: 5),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          RichText(
-                                            text: TextSpan(
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                              children: [
-                                                TextSpan(
-                                                    text:
-                                                        'Tersedia rekaman suara dari ',
-                                                    style: GoogleFonts.poppins(
-                                                      fontSize: 12,
-                                                    )),
-                                                TextSpan(
-                                                  text: ' seloko',
-                                                  style: GoogleFonts.poppins(
-                                                    fontStyle: FontStyle.italic,
-                                                    fontSize: 12,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            textAlign: TextAlign.justify,
-                                          ),
-                                          Text(
-                                            'yang biasa digunakan dalam',
-                                            style: GoogleFonts.poppins(
-                                              color: Colors.black,
-                                              fontSize: 12,
-                                            ),
-                                          ),
-                                          Text(
-                                            'acara pernikahan.',
-                                            style: GoogleFonts.poppins(
-                                              color: Colors.black,
-                                              fontSize: 12,
-                                            ),
-                                          ),
-                                        ],
+                              const SizedBox(width: 16),
+                              Expanded(
+                                child: Container(
+                                  margin: const EdgeInsets.only(top: 11),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        'Seloko',
+                                        style: GoogleFonts.poppins(
+                                            color: Colors.black,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600),
                                       ),
-                                    )
-                                  ],
+                                      Container(
+                                        margin: const EdgeInsets.only(
+                                            top: 5, right: 15),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            RichText(
+                                              text: TextSpan(
+                                                style: const TextStyle(
+                                                    color: Colors.black),
+                                                children: [
+                                                  TextSpan(
+                                                      text:
+                                                          'Tersedia rekaman suara dari ',
+                                                      style:
+                                                          GoogleFonts.poppins(
+                                                        fontSize: 12,
+                                                      )),
+                                                  TextSpan(
+                                                    text: ' seloko',
+                                                    style: GoogleFonts.poppins(
+                                                      fontStyle:
+                                                          FontStyle.italic,
+                                                      fontSize: 12,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                      text:
+                                                          ' yang biasa digunakan dalam acara pernikahan.',
+                                                      style:
+                                                          GoogleFonts.poppins(
+                                                        fontSize: 12,
+                                                      )),
+                                                ],
+                                              ),
+                                              textAlign: TextAlign.justify,
+                                            ),
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               )
                             ],
@@ -450,7 +455,7 @@ class _BerandaState extends State<Beranda> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 // Fitur Tambahan untuk Budaya
@@ -458,85 +463,86 @@ class _BerandaState extends State<Beranda> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Budaya()),
+                      MaterialPageRoute(builder: (context) => const Budaya()),
                     );
                   },
                   child: Container(
-                    margin: EdgeInsets.only(left: 24, right: 24),
-                    padding: EdgeInsets.only(top: 10),
+                    margin: const EdgeInsets.only(left: 24, right: 24),
+                    padding: const EdgeInsets.only(top: 10),
                     child: Column(
                       children: [
                         Container(
-                          width: 360,
+                          width: MediaQuery.of(context).size.width - 48,
                           height: 102,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               border: Border.all(
-                                  color: Color.fromRGBO(251, 182, 175, 1))),
+                                  color:
+                                      const Color.fromRGBO(251, 182, 175, 1))),
                           child: Row(
                             children: [
                               Container(
                                 width: 71,
                                 height: 84,
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     top: 19.5,
                                     bottom: 19.5,
                                     right: 15,
                                     left: 15),
-                                margin:
-                                    EdgeInsets.only(left: 8, top: 9, bottom: 9),
+                                margin: const EdgeInsets.only(
+                                    left: 8, top: 9, bottom: 9),
                                 decoration: BoxDecoration(
-                                    color: Color.fromRGBO(251, 182, 175, 1),
+                                    color:
+                                        const Color.fromRGBO(251, 182, 175, 1),
                                     borderRadius: BorderRadius.circular(10)),
                                 child: Image.asset(
                                   'assets/img/batik.png',
                                   fit: BoxFit.contain,
                                 ),
                               ),
-                              SizedBox(width: 16),
-                              Container(
-                                margin: EdgeInsets.only(top: 11),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Text(
-                                      'Budaya',
-                                      style: GoogleFonts.poppins(
-                                          color: Colors.black,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(top: 5),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Terdapat informasi mengenai',
-                                            style: GoogleFonts.poppins(
-                                              color: Colors.black,
-                                              fontSize: 12,
-                                            ),
-                                          ),
-                                          Text(
-                                            'budaya Jambi Seberang mulai dari',
-                                            style: GoogleFonts.poppins(
-                                              color: Colors.black,
-                                              fontSize: 12,
-                                            ),
-                                          ),
-                                          Text(
-                                            'sejarah sampai wisata.',
-                                            style: GoogleFonts.poppins(
-                                              color: Colors.black,
-                                              fontSize: 12,
-                                            ),
-                                          ),
-                                        ],
+                              const SizedBox(width: 16),
+                              Expanded(
+                                child: Container(
+                                  margin: const EdgeInsets.only(top: 11),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        'Budaya',
+                                        style: GoogleFonts.poppins(
+                                            color: Colors.black,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600),
                                       ),
-                                    )
-                                  ],
+                                      Container(
+                                        margin: const EdgeInsets.only(
+                                            top: 5, right: 15),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            RichText(
+                                              text: TextSpan(
+                                                style: const TextStyle(
+                                                    color: Colors.black),
+                                                children: [
+                                                  TextSpan(
+                                                      text:
+                                                          'Terdapat informasi mengenai budaya Jambi Seberang mulai dari sejarah sampai wisata.',
+                                                      style:
+                                                          GoogleFonts.poppins(
+                                                        fontSize: 12,
+                                                      )),
+                                                ],
+                                              ),
+                                              textAlign: TextAlign.justify,
+                                            ),
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               )
                             ],
